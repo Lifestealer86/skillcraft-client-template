@@ -1,0 +1,171 @@
+@import "bootstrap/bootstrap.min.css";
+@import "../fontawesome/css/all.css";
+
+:root {
+    --primary-color: #3a86ff;
+    --secondary-color: #8338ec;
+    --accent-color: #ff006e;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-color);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--primary-color) !important;
+}
+
+.welcome-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 5rem 0;
+    margin-bottom: 3rem;
+    border-radius: 0 0 20px 20px;
+}
+
+.course-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.course-img {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.course-category {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.course-level {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.beginner {
+    background-color: rgba(0, 200, 83, 0.1);
+    color: #00c853;
+}
+
+.intermediate {
+    background-color: rgba(255, 145, 0, 0.1);
+    color: #ff9100;
+}
+
+.advanced {
+    background-color: rgba(255, 0, 110, 0.1);
+    color: var(--accent-color);
+}
+
+.rating {
+    color: #ffc107;
+}
+
+.platform-info {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    padding: 3rem;
+    margin-top: 4rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #2a75ff;
+    border-color: #2a75ff;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+h2, h3, h4 {
+    font-weight: 700;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-bottom: 10px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.icon-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(58, 134, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.icon-wrapper i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
