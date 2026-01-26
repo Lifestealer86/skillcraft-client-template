@@ -10,6 +10,382 @@
     <script defer src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-lightbulb text-warning"></i> SkillCraft
+            </a>
 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse ms-5" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-primary fs-5 fw-bold" href="catalog.html">
+                            <i class="fas fa-book me-1"></i> Каталог курсов
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <!-- Элементы для неавторизованных пользователей -->
+                    <li class="nav-item">
+                        <a class="btn btn-outline-primary me-2" href="login.html">
+                            <i class="fas fa-sign-in-alt me-1"></i> Вход
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="register.html">
+                            <i class="fas fa-user-plus me-1"></i> Регистрация
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Основной контент -->
+<main class="container my-5">
+    <div class="row">
+        <!-- Основная информация о курсе -->
+        <div class="col-lg-8">
+            <!-- Заголовок и мета-информация -->
+            <div class="mb-4">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                            <span class="badge bg-primary mb-2">
+                                <i class="fas fa-paint-brush me-1"></i> Дизайн
+                            </span>
+                    </div>
+                    <span class="course-level advanced">Продвинутый</span>
+                </div>
+
+                <h1 class="display-5 fw-bold mb-3">UX/UI дизайн с нуля до профи</h1>
+
+                <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                    <div class="d-flex align-items-center">
+                        <div class="rating me-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="fw-bold">5.0</span>
+                        <span class="text-muted ms-1">(89 отзывов)</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-user-graduate text-primary me-2"></i>
+                        <span class="fw-bold">47</span>
+                        <span class="text-muted ms-1">студентов</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-clock text-primary me-2"></i>
+                        <span>48 часов</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Изображение курса -->
+            <div class="mb-5 d-flex justify-content-center">
+                <img src="assets/img/main_cat_3.avif"
+                     class="img-fluid rounded-3 shadow w-50" alt="UX/UI дизайн с нуля до профи">
+            </div>
+
+            <!-- Описание курса -->
+            <div class="mb-5">
+                <h2 class="section-title">Описание курса</h2>
+                <p class="lead">Научитесь создавать удобные и красивые интерфейсы для веб-сайтов и мобильных приложений
+                    с нуля до профессионального уровня.</p>
+
+                <p>Этот курс предназначен для тех, кто хочет освоить UX/UI дизайн с самого начала. Вы научитесь не
+                    только создавать визуально привлекательные интерфейсы, но и проектировать пользовательский опыт,
+                    который делает продукты удобными и эффективными.</p>
+            </div>
+
+            <!-- Преподаватель -->
+            <div class="mb-5">
+                <h2 class="section-title">Преподаватель</h2>
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h4 class="fw-bold mb-2">Мария Ковалева</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Отзывы -->
+            <div class="mb-5">
+                <h2 class="section-title">Отзывы студентов</h2>
+
+                <!-- Средний рейтинг -->
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 text-center mb-3 mb-md-0">
+                                <div class="display-4 fw-bold text-primary">5.0</div>
+                                <div class="rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <small class="text-muted">89 отзывов</small>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-12 mb-2">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2">5 звезд</span>
+                                            <div class="progress flex-grow-1" style="height: 8px;">
+                                                <div class="progress-bar bg-warning" style="width: 85%"></div>
+                                            </div>
+                                            <span class="ms-2">85%</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2">4 звезды</span>
+                                            <div class="progress flex-grow-1" style="height: 8px;">
+                                                <div class="progress-bar bg-warning" style="width: 12%"></div>
+                                            </div>
+                                            <span class="ms-2">12%</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-2">3 звезды</span>
+                                            <div class="progress flex-grow-1" style="height: 8px;">
+                                                <div class="progress-bar bg-warning" style="width: 3%"></div>
+                                            </div>
+                                            <span class="ms-2">3%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Список отзывов -->
+                <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <div class="flex-grow-1 ms-3">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Алексей Иванов</h6>
+                                    </div>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="mb-0">Отличный курс! Мария объясняет сложные темы очень доступно. После курса
+                                    смог устроиться на работу junior-дизайнером. Особенно понравились практические
+                                    задания и разбор реальных кейсов.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <div class="flex-grow-1 ms-3">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Елена Смирнова</h6>
+                                    </div>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="mb-0">Курс полностью оправдал ожидания. Очень много практики, качественная
+                                    обратная связь от преподавателя. Теперь уверенно работаю в Figma и понимаю весь
+                                    процесс создания интерфейсов от исследования до передачи в разработку.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <div class="flex-grow-1 ms-3">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Дмитрий Петров</h6>
+                                    </div>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="mb-0">Хороший структурированный курс. Особенно полезными были уроки по
+                                    дизайн-системам. Единственное, хотелось бы больше информации про анимацию
+                                    интерфейсов. В целом рекомендую!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Боковая панель с информацией и действиями -->
+        <div class="col-lg-4">
+            <div class="sticky-top" style="top: 100px;">
+                <!-- Карточка с информацией о курсе -->
+                <div class="card border-0 shadow-lg rounded-3 mb-4">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <div class="display-4 fw-bold text-primary mb-2">8 500 ₽</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5 class="fw-bold mb-3"><i class="fas fa-info-circle me-2"></i> Информация о курсе</h5>
+                            <ul class="list-unstyled">
+                                <li class="d-flex justify-content-between py-2 border-bottom">
+                                    <span><i class="fas fa-calendar-alt me-2"></i> Начало:</span>
+                                    <span class="fw-semibold">15-01-2026</span>
+                                </li>
+                                <li class="d-flex justify-content-between py-2 border-bottom">
+                                    <span><i class="fas fa-calendar-check me-2"></i> Окончание:</span>
+                                    <span class="fw-semibold">15-03-2026</span>
+                                </li>
+                                <li class="d-flex justify-content-between py-2 border-bottom">
+                                    <span><i class="fas fa-clock me-2"></i> Продолжительность:</span>
+                                    <span class="fw-semibold">48 часов</span>
+                                </li>
+                                <li class="d-flex justify-content-between py-2 border-bottom">
+                                    <span><i class="fas fa-tag me-2"></i> Категория:</span>
+                                    <span class="fw-semibold">Дизайн</span>
+                                </li>
+                                <li class="d-flex justify-content-between py-2 border-bottom">
+                                    <span><i class="fas fa-chart-line me-2"></i> Уровень:</span>
+                                    <span class="course-level advanced">Продвинутый</span>
+                                </li>
+                                <li class="d-flex justify-content-between py-2 border-bottom">
+                                    <span><i class="fas fa-user-tie me-2"></i> Преподаватель:</span>
+                                    <span class="fw-semibold">Мария Ковалева</span>
+                                </li>
+                                <li class="d-flex justify-content-between py-2">
+                                    <span><i class="fas fa-user-graduate me-2"></i> Студентов:</span>
+                                    <span class="fw-semibold">47</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Кнопка записи (для авторизованных) -->
+                        <div class="d-grid gap-2 mb-3">
+                            <a href="login.html" class="btn btn-primary btn-lg py-3 fw-bold">
+                                <i class="fas fa-sign-in-alt me-2"></i> Войдите, чтобы записаться
+                            </a>
+
+                            <!-- Для авторизованных пользователей (закомментировано) -->
+
+<!--                            <button class="btn btn-primary btn-lg py-3 fw-bold">-->
+<!--                                <i class="fas fa-shopping-cart me-2"></i> Записаться на курс-->
+<!--                            </button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Футер -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h3 class="fw-bold mb-3">
+                    <i class="fas fa-lightbulb text-warning"></i> SkillCraft
+                </h3>
+                <p>Онлайн-платформа для обучения самым востребованным навыкам современности.</p>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                <h5 class="fw-bold mb-3">Каталог</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-code me-1"></i> Программирование
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-paint-brush me-1"></i> Дизайн
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-bullhorn me-1"></i> Маркетинг
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-chart-bar me-1"></i> Аналитика
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                <h5 class="fw-bold mb-3">Платформа</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="#about" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-info-circle me-1"></i> О нас
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-chalkboard-teacher me-1"></i> Преподавателям
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-envelope me-1"></i> Контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <h5 class="fw-bold mb-3">Подписка на новости</h5>
+                <p class="text-white-50 mb-3">Будьте в курсе новых курсов и акций</p>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Ваш email">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-paper-plane me-1"></i> Подписаться
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+        <div class="text-center text-white-50">
+            <p>
+                <i class="far fa-copyright me-1"></i>2026 SkillCraft. Все права защищены.
+            </p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
