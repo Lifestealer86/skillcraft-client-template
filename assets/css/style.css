@@ -1,6 +1,12 @@
 @import "bootstrap/bootstrap.min.css";
 @import "../fontawesome/css/all.css";
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --primary-color: #3a86ff;
     --secondary-color: #8338ec;
@@ -17,7 +23,7 @@ body {
 .navbar-brand {
     font-weight: 700;
     font-size: 1.8rem;
-    color: var(--primary-color) !important;
+    color: var(--primary-color);
 }
 
 .welcome-section {
