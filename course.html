@@ -257,7 +257,7 @@
                 <div class="card border-0 shadow-lg rounded-3 mb-4">
                     <div class="card-body p-4">
                         <div class="text-center mb-4">
-                            <div class="display-4 fw-bold text-primary mb-2">8 500 ₽</div>
+                            <div class="display-4 fw-bold text-primary mb-2">8 500.00 &#8381;</div>
                         </div>
 
                         <div class="mb-4">
@@ -294,17 +294,22 @@
                             </ul>
                         </div>
 
-                        <!-- Кнопка записи (для авторизованных) -->
+                        <!-- Блок кнопок взаимодействия -->
                         <div class="d-grid gap-2 mb-3">
+                            <!-- Кнопка входа (для не авторизованных) -->
                             <a href="login.html" class="btn btn-primary btn-lg py-3 fw-bold">
                                 <i class="fas fa-sign-in-alt me-2"></i> Войдите, чтобы записаться
                             </a>
 
-                            <!-- Для авторизованных пользователей (закомментировано) -->
+                            <!-- Для авторизованных пользователей -->
+                            <button class="btn btn-primary btn-lg py-3 fw-bold">
+                                <i class="fas fa-shopping-cart me-2"></i> Записаться на курс
+                            </button>
 
-<!--                            <button class="btn btn-primary btn-lg py-3 fw-bold">-->
-<!--                                <i class="fas fa-shopping-cart me-2"></i> Записаться на курс-->
-<!--                            </button>-->
+                            <!-- Для записанных пользователей -->
+                            <a href="feedback.html" class="btn btn-primary btn-lg py-3 fw-bold">
+                                <i class="fas fa-heart me-2"></i> Поделиться мнением
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -352,7 +357,7 @@
                 <h5 class="fw-bold mb-3">Платформа</h5>
                 <ul class="list-unstyled">
                     <li class="mb-2">
-                        <a href="#about" class="text-white-50 text-decoration-none">
+                        <a href="index.html#about" class="text-white-50 text-decoration-none">
                             <i class="fas fa-info-circle me-1"></i> О нас
                         </a>
                     </li>

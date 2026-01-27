@@ -10,6 +10,339 @@
     <script defer src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-lightbulb text-warning"></i> SkillCraft
+            </a>
 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse ms-5" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-primary fs-5 fw-bold" href="catalog.html">
+                            <i class="fas fa-book me-1"></i> Каталог курсов
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <!-- Элементы для авторизованных пользователей -->
+                    <li class="nav-item dropdown">
+                        <a class="btn btn-primary p-3 dropdown-toggle d-flex align-items-center" href="#" role="button"
+                           data-bs-toggle="dropdown">
+                            <div class="me-2">Управление</div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user-circle me-2"></i>Личный
+                                кабинет</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="logout"><i class="fas fa-sign-out-alt me-2"></i>Выход</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Основной контент -->
+<main class="container my-4">
+    <div class="row">
+        <!-- Список модулей слева -->
+        <div class="col-lg-3 mb-4 mb-lg-0">
+            <div class="card border-0 shadow-sm rounded-3 sticky-top" style="top: 100px;">
+                <div class="card-header bg-white border-0 py-3">
+                    <h5 class="fw-bold mb-0">
+                        <i class="fas fa-list-ul me-2"></i> Модули курса
+                    </h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="list-group list-group-flush">
+                        <a href="module.html?id=1" class="list-group-item list-group-item-action py-3 border-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <div class="d-flex align-items-center">
+                                            <span class="badge bg-success me-2">
+                                                <i class="fas fa-check"></i>
+                                            </span>
+                                        <small class="text-muted d-block mt-1">Основы UX/UI дизайна</small>
+                                    </div>
+                                </div>
+                                <small class="text-muted">30 минут</small>
+                            </div>
+                        </a>
+
+                        <a href="module.html?id=2" class="list-group-item list-group-item-action py-3 border-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <div class="d-flex align-items-center">
+                                            <span class="badge bg-success me-2">
+                                                <i class="fas fa-check"></i>
+                                            </span>
+                                        <small class="text-muted d-block mt-1">Работа в Figma</small>
+                                    </div>
+                                </div>
+                                <small class="text-muted">15 минут</small>
+                            </div>
+                        </a>
+
+                        <a href="module.html?id=3" class="list-group-item list-group-item-action py-3 border-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <div class="d-flex align-items-center">
+                                            <span class="badge bg-success me-2">
+                                                <i class="fas fa-check"></i>
+                                            </span>
+                                        <small class="text-muted d-block mt-1">Прототипирование</small>
+                                    </div>
+                                </div>
+                                <small class="text-muted">45 минут</small>
+                            </div>
+                        </a>
+
+                        <a href="module.html?id=4" class="list-group-item list-group-item-action py-3 border-0 active">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <div class="d-flex align-items-center">
+                                            <span class="badge bg-warning me-2">
+                                                <i class="fas fa-play"></i>
+                                            </span>
+                                        <small class="d-block mt-1">Дизайн-системы</small>
+                                    </div>
+                                </div>
+                                <small>50 минут</small>
+                            </div>
+                        </a>
+
+                        <a href="#" class="list-group-item list-group-item-action py-3 border-0 disabled">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <div class="d-flex align-items-center">
+                                            <span class="badge bg-primary me-2">
+                                                <i class="fas fa-door-open"></i>
+                                            </span>
+                                        <small class="text-muted d-block mt-1">Портфолио</small>
+                                    </div>
+                                </div>
+                                <small class="text-muted">20 минут</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0 py-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="previous" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left me-2"></i> Назад
+                        </a>
+                        <a href="next" class="btn btn-outline-primary">
+                            Вперёд <i class="fas fa-arrow-right me-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Текущий модуль по центру -->
+        <div class="col-lg-9">
+            <div class="card border-0 shadow-sm rounded-3">
+                <!-- Заголовок модуля -->
+                <div class="card-header bg-white border-0 py-4">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-primary me-2">Модуль 4 из 5</span>
+                                <span class="badge bg-warning text-dark">
+                                        <i class="fas fa-clock me-1"></i> 2 часа 50 минут
+                                    </span>
+                            </div>
+                            <h1 class="display-6 fw-bold mb-2">Дизайн-системы: создание и применение</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Контент модуля -->
+                <div class="card-body p-4">
+                    <!-- Описание модуля -->
+                    <div class="mb-5">
+                        <h3 class="fw-bold mb-3">
+                            <i class="fas fa-align-left me-2"></i> Описание модуля
+                        </h3>
+                        <p class="lead">В этом модуле вы изучите принципы создания и применения дизайн-систем для
+                            обеспечения согласованности и масштабируемости интерфейсов.</p>
+                    </div>
+
+                    <!-- Видео модуля -->
+                    <div class="mb-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="fw-bold mb-0">
+                                <i class="fas fa-play-circle me-2"></i> Видеоурок
+                            </h3>
+                        </div>
+                        <div class="alert alert-info d-flex align-items-center">
+                            <i class="fas fa-info-circle me-3 fs-4"></i>
+                            <div>
+                                <strong>Ссылка на видео:</strong>
+                                <a href="" class="alert-link ms-1">https://skill-video.cc/learn/v12345</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Материалы модуля -->
+                    <div class="mb-5">
+                        <h3 class="fw-bold mb-4">
+                            <i class="fas fa-file-alt me-2"></i> Материалы для скачивания
+                        </h3>
+
+                        <div class="row g-3">
+                            <div class="card border">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h6 class="fw-bold mb-1">Presentation.pdf</h6>
+                                        <a href="/uploads/materials/Presentation.pdf"
+                                           class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-download me-1"></i> Скачать
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Контроль прохождения -->
+                    <div class="mb-4">
+                        <div class="card border-0 bg-light">
+                            <div class="card-body p-4">
+                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                                    <div class="mb-3 mb-md-0">
+                                        <h5 class="fw-bold mb-2">Отметьте модуль как пройденный</h5>
+                                        <p class="text-muted mb-0">После изучения всех материалов и выполнения задания
+                                            отметьте модуль как завершенный</p>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="form-check form-switch me-3">
+                                            <input class="form-check-input" type="checkbox" id="moduleComplete"
+                                                   style="width: 3em; height: 1.5em;">
+                                            <label class="form-check-label fw-bold" for="moduleComplete">
+                                                Модуль пройден
+                                            </label>
+                                        </div>
+                                        <button class="btn btn-secondary" disabled id="completeModuleBtn">
+                                            <i class="fas fa-check-circle me-1"></i> Завершить модуль
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Футер -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h3 class="fw-bold mb-3">
+                    <i class="fas fa-lightbulb text-warning"></i> SkillCraft
+                </h3>
+                <p>Онлайн-платформа для обучения самым востребованным навыкам современности.</p>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                <h5 class="fw-bold mb-3">Каталог</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-code me-1"></i> Программирование
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-paint-brush me-1"></i> Дизайн
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-bullhorn me-1"></i> Маркетинг
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-chart-bar me-1"></i> Аналитика
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                <h5 class="fw-bold mb-3">Платформа</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="index.html#about" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-info-circle me-1"></i> О нас
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-chalkboard-teacher me-1"></i> Преподавателям
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="" class="text-white-50 text-decoration-none">
+                            <i class="fas fa-envelope me-1"></i> Контакты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <h5 class="fw-bold mb-3">Подписка на новости</h5>
+                <p class="text-white-50 mb-3">Будьте в курсе новых курсов и акций</p>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Ваш email">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-paper-plane me-1"></i> Подписаться
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+        <div class="text-center text-white-50">
+            <p>
+                <i class="far fa-copyright me-1"></i>2026 SkillCraft. Все права защищены.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Автоматическое переключение чекбокса при клике на кнопку
+    let module_status = false;
+    document.getElementById('moduleComplete').addEventListener('change', function () {
+        const completeBtn = document.getElementById('completeModuleBtn');
+        if (this.checked && !module_status) {
+            completeBtn.classList.remove('btn-secondary');
+            completeBtn.classList.add('btn-success');
+            completeBtn.disabled = false;
+            completeBtn.addEventListener('click', function () {
+                module_status = true;
+                document.getElementById('moduleComplete').disabled = true;
+                completeBtn.disabled = true;
+            })
+        } else {
+            completeBtn.classList.remove('btn-success');
+            completeBtn.classList.add('btn-secondary');
+            completeBtn.disabled = true;
+        }
+    });
+</script>
 </body>
 </html>
