@@ -110,7 +110,7 @@
                     </form>
 
                     <!-- Результат проверки -->
-                    <div id="result-container" class="mt-4" style="display: none;">
+                    <div id="result-container" class="mt-4">
                         <div class="text-center mb-4">
                             <h3 class="fw-bold mb-3">
                                 <i class="fas fa-clipboard-check me-2"></i> Результат проверки
@@ -120,7 +120,9 @@
                                     <span id="certificate-id-display" class="badge bg-dark fs-6">SC_123456789012</span>
                                 </div>
                                 <div>
-                                    <span id="status-badge" class="badge fs-6">Не проверен</span>
+                                    <span id="status-badge-new" class="badge bg-warning fs-6">Не проверен</span>
+                                    <span id="status-badge-success" class="badge bg-success fs-6">Действительный</span>
+                                    <span id="status-badge" class="badge bg-danger fs-6">Недействительный</span>
                                 </div>
                             </div>
                         </div>
@@ -166,80 +168,13 @@
 
                                         <div class="mb-3">
                                             <div class="text-muted small mb-1">
-                                                <i class="fas fa-calendar-check me-1"></i> Действителен до
-                                            </div>
-                                            <div class="fw-semibold" id="valid-until">—</div>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <div class="text-muted small mb-1">
                                                 <i class="fas fa-clock me-1"></i> Продолжительность курса
                                             </div>
                                             <div class="fw-semibold" id="course-duration">—</div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Дополнительная информация -->
-                                <div class="mt-4 pt-3 border-top">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <div class="text-muted small mb-1">
-                                                    <i class="fas fa-hashtag me-1"></i> Уникальный ID
-                                                </div>
-                                                <div class="fw-semibold font-monospace" id="certificate-id">—</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <div class="text-muted small mb-1">
-                                                    <i class="fas fa-barcode me-1"></i> QR-код для проверки
-                                                </div>
-                                                <div class="mt-2">
-                                                    <div id="qr-code-placeholder" class="bg-light p-3 text-center rounded" style="width: 120px; height: 120px;">
-                                                        <i class="fas fa-qrcode text-muted fs-1"></i>
-                                                        <div class="small mt-2">QR-код</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-
-                        <!-- Действия с результатом -->
-                        <div class="text-center">
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-outline-primary" id="print-btn">
-                                    <i class="fas fa-print me-2"></i> Распечатать результат
-                                </button>
-                                <button class="btn btn-outline-secondary" id="new-check-btn">
-                                    <i class="fas fa-redo me-2"></i> Новая проверка
-                                </button>
-                                <button class="btn btn-outline-success" id="download-btn">
-                                    <i class="fas fa-download me-2"></i> Скачать сертификат
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Сообщение об ошибке -->
-                    <div id="error-container" class="mt-4" style="display: none;">
-                        <div class="alert alert-danger">
-                            <div class="d-flex">
-                                <i class="fas fa-exclamation-triangle me-3 fs-4"></i>
-                                <div>
-                                    <h5 class="alert-heading mb-2" id="error-title">Ошибка проверки</h5>
-                                    <p class="mb-0" id="error-message"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-outline-primary" id="retry-btn">
-                                <i class="fas fa-redo me-2"></i> Попробовать снова
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -313,7 +248,7 @@
                 <div class="d-flex justify-content-center flex-wrap gap-4">
                     <div class="text-center">
                         <div class="display-6 fw-bold text-primary">15,847</div>
-                        <div class="text-muted">Выданных сертификатов</div>
+                        <div class="text-muted">Проверенных сертификатов</div>
                     </div>
                     <div class="text-center">
                         <div class="display-6 fw-bold text-success">99.8%</div>
@@ -403,227 +338,5 @@
         </div>
     </div>
 </footer>
-<script>
-    // База данных "сертификатов" для демонстрации
-    const certificateDatabase = {
-        'SC_202312345678': {
-            valid: true,
-            studentName: 'Иван Иванов',
-            courseName: 'UX/UI дизайн с нуля до профи',
-            teacherName: 'Мария Ковалева',
-            issueDate: '15.03.2024',
-            validUntil: 'Бессрочно',
-            courseDuration: '48 часов',
-            certificateId: 'SC_202312345678'
-        },
-        'SC_202398765432': {
-            valid: true,
-            studentName: 'Анна Петрова',
-            courseName: 'Python для начинающих',
-            teacherName: 'Анна Петрова',
-            issueDate: '10.02.2024',
-            validUntil: 'Бессрочно',
-            courseDuration: '36 часов',
-            certificateId: 'SC_202398765432'
-        },
-        'SC_202411223344': {
-            valid: true,
-            studentName: 'Дмитрий Смирнов',
-            courseName: 'Анализ данных в Excel и Power BI',
-            teacherName: 'Дмитрий Смирнов',
-            issueDate: '05.01.2024',
-            validUntil: 'Бессрочно',
-            courseDuration: '42 часа',
-            certificateId: 'SC_202411223344'
-        },
-        'SC_202455667788': {
-            valid: false,
-            reason: 'Сертификат отозван'
-        },
-        'SC_202499887766': {
-            valid: false,
-            reason: 'Недействительный номер'
-        }
-    };
-
-    // Элементы DOM
-    const certificateForm = document.getElementById('certificate-form');
-    const certificateInput = document.getElementById('certificate-number');
-    const resultContainer = document.getElementById('result-container');
-    const errorContainer = document.getElementById('error-container');
-    const checkBtn = document.getElementById('check-btn');
-
-    // Обработка отправки формы
-    certificateForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        checkCertificate();
-    });
-
-    // Обработка клика по кнопке "Проверить"
-    checkBtn.addEventListener('click', function() {
-        checkCertificate();
-    });
-
-    // Функция проверки сертификата
-    function checkCertificate() {
-        // Скрываем предыдущие результаты
-        resultContainer.style.display = 'none';
-        errorContainer.style.display = 'none';
-
-        // Получаем и очищаем номер сертификата
-        let certNumber = certificateInput.value.trim().toUpperCase();
-
-        // Проверка формата
-        if (!isValidCertificateFormat(certNumber)) {
-            showError('Неверный формат номера', 'Номер сертификата должен соответствовать формату: SC_XXXXXXXXXXXX, где X - цифры (всего 12 цифр).');
-            return;
-        }
-
-        // Показываем индикатор загрузки
-        checkBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Проверка...';
-        checkBtn.disabled = true;
-
-        // Имитация задержки запроса
-        setTimeout(() => {
-            // Проверяем наличие сертификата в базе данных
-            if (certificateDatabase.hasOwnProperty(certNumber)) {
-                const certData = certificateDatabase[certNumber];
-
-                if (certData.valid) {
-                    showValidCertificate(certNumber, certData);
-                } else {
-                    showInvalidCertificate(certNumber, certData.reason);
-                }
-            } else {
-                showError('Сертификат не найден', 'Сертификат с указанным номером не найден в базе данных. Пожалуйста, проверьте правильность номера.');
-            }
-
-            // Восстанавливаем кнопку
-            checkBtn.innerHTML = '<i class="fas fa-search me-2"></i> Проверить';
-            checkBtn.disabled = false;
-        }, 1000);
-    }
-
-    // Проверка формата номера сертификата
-    function isValidCertificateFormat(certNumber) {
-        // Формат: SC_ + 12 цифр
-        const regex = /^SC_\d{12}$/;
-        return regex.test(certNumber);
-    }
-
-    // Показать действительный сертификат
-    function showValidCertificate(certNumber, certData) {
-        // Обновляем отображение номера и статуса
-        document.getElementById('certificate-id-display').textContent = certNumber;
-        document.getElementById('status-badge').textContent = 'Действительный';
-        document.getElementById('status-badge').className = 'badge bg-success fs-6';
-
-        // Заполняем информацию о сертификате
-        document.getElementById('student-name').textContent = certData.studentName;
-        document.getElementById('course-name').textContent = certData.courseName;
-        document.getElementById('teacher-name').textContent = certData.teacherName;
-        document.getElementById('issue-date').textContent = certData.issueDate;
-        document.getElementById('valid-until').textContent = certData.validUntil;
-        document.getElementById('course-duration').textContent = certData.courseDuration;
-        document.getElementById('certificate-id').textContent = certData.certificateId;
-
-        // Показываем результат
-        resultContainer.style.display = 'block';
-
-        // Прокручиваем к результату
-        resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-
-    // Показать недействительный сертификат
-    function showInvalidCertificate(certNumber, reason) {
-        // Обновляем отображение номера и статуса
-        document.getElementById('certificate-id-display').textContent = certNumber;
-        document.getElementById('status-badge').textContent = 'Недействительный';
-        document.getElementById('status-badge').className = 'badge bg-danger fs-6';
-
-        // Заполняем информацию о сертификате
-        document.getElementById('student-name').textContent = '—';
-        document.getElementById('course-name').textContent = '—';
-        document.getElementById('teacher-name').textContent = '—';
-        document.getElementById('issue-date').textContent = '—';
-        document.getElementById('valid-until').textContent = '—';
-        document.getElementById('course-duration').textContent = '—';
-        document.getElementById('certificate-id').textContent = certNumber;
-
-        // Добавляем сообщение о причине недействительности
-        const detailsCard = document.getElementById('certificate-details');
-        let alertHtml = `
-                <div class="alert alert-warning mt-3">
-                    <i class="fas fa-exclamation-triangle me-2"></i>
-                    <strong>Причина:</strong> ${reason}
-                </div>
-            `;
-
-        // Добавляем алерт после существующего содержимого
-        detailsCard.querySelector('.card-body').insertAdjacentHTML('beforeend', alertHtml);
-
-        // Показываем результат
-        resultContainer.style.display = 'block';
-
-        // Прокручиваем к результату
-        resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-
-    // Показать ошибку
-    function showError(title, message) {
-        document.getElementById('error-title').textContent = title;
-        document.getElementById('error-message').textContent = message;
-        errorContainer.style.display = 'block';
-
-        // Прокручиваем к ошибке
-        errorContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-
-    // Обработка кнопки "Новая проверка"
-    document.getElementById('new-check-btn').addEventListener('click', function() {
-        resultContainer.style.display = 'none';
-        certificateInput.value = '';
-        certificateInput.focus();
-
-        // Очищаем возможные предыдущие алерты
-        const existingAlert = document.querySelector('#certificate-details .alert-warning');
-        if (existingAlert) {
-            existingAlert.remove();
-        }
-    });
-
-    // Обработка кнопки "Попробовать снова"
-    document.getElementById('retry-btn').addEventListener('click', function() {
-        errorContainer.style.display = 'none';
-        certificateInput.focus();
-    });
-
-    // Обработка кнопки "Распечатать результат"
-    document.getElementById('print-btn').addEventListener('click', function() {
-        alert('Функция печати будет доступна в полной версии системы.');
-    });
-
-    // Обработка кнопки "Скачать сертификат"
-    document.getElementById('download-btn').addEventListener('click', function() {
-        alert('Функция скачивания сертификата будет доступна после авторизации в системе.');
-    });
-
-    // Автоматическая проверка при загрузке страницы (для демонстрации)
-    document.addEventListener('DOMContentLoaded', function() {
-        // Автозаполнение для демонстрации
-        certificateInput.value = 'SC_202312345678';
-
-        // Можно раскомментировать для автоматической проверки при загрузке
-        // checkCertificate();
-
-        // Фокус на поле ввода
-        certificateInput.focus();
-
-        // Обработка ввода - автоматическое приведение к верхнему регистру
-        certificateInput.addEventListener('input', function() {
-            this.value = this.value.toUpperCase();
-        });
-    });
-</script>
 </body>
 </html>
