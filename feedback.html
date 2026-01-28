@@ -76,20 +76,8 @@
 
                             <div class="text-center mb-4">
                                 <div class="rating-input mb-3" id="rating-stars">
-                                    <input type="radio" id="star1" name="rating" value="1" class="d-none">
-                                    <label for="star1" class="star-label">
-                                        <i class="far fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </label>
-
-                                    <input type="radio" id="star2" name="rating" value="2" class="d-none">
-                                    <label for="star2" class="star-label">
-                                        <i class="far fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </label>
-
-                                    <input type="radio" id="star3" name="rating" value="3" class="d-none">
-                                    <label for="star3" class="star-label">
+                                    <input type="radio" id="star5" name="rating" value="5" class="d-none">
+                                    <label for="star5" class="star-label">
                                         <i class="far fa-star"></i>
                                         <i class="fas fa-star"></i>
                                     </label>
@@ -100,8 +88,20 @@
                                         <i class="fas fa-star"></i>
                                     </label>
 
-                                    <input type="radio" id="star5" name="rating" value="5" class="d-none" checked>
-                                    <label for="star5" class="star-label">
+                                    <input type="radio" id="star3" name="rating" value="3" class="d-none">
+                                    <label for="star3" class="star-label">
+                                        <i class="far fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </label>
+
+                                    <input type="radio" id="star2" name="rating" value="2" class="d-none">
+                                    <label for="star2" class="star-label">
+                                        <i class="far fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </label>
+
+                                    <input type="radio" id="star1" name="rating" value="1" class="d-none">
+                                    <label for="star1" class="star-label">
                                         <i class="far fa-star"></i>
                                         <i class="fas fa-star"></i>
                                     </label>
@@ -109,11 +109,10 @@
 
                                 <div class="rating-feedback">
                                     <span id="rating-text" class="fw-bold">Выберите оценку</span>
-                                    <div id="rating-description" class="text-muted small mt-1"></div>
+                                    <div id="rating-description" class="text-muted small mt-1">&nbsp;</div>
                                 </div>
                             </div>
                         </div>
-
                         <!-- Комментарий -->
                         <div class="mb-5">
                             <h3 class="fw-bold mb-4">
@@ -146,6 +145,7 @@
                 </div>
             </div>
 
+
             <!-- Примеры хороших отзывов -->
             <div class="mt-5">
                 <h3 class="fw-bold mb-4">
@@ -166,7 +166,9 @@
                                     </div>
                                     <span class="badge bg-success">Полезный отзыв</span>
                                 </div>
-                                <p class="card-text">"Курс превзошел ожидания! Особенно понравились практические задания и обратная связь от преподавателя. После курса смог выполнить реальный проект для портфолио."</p>
+                                <p class="card-text">"Курс превзошел ожидания! Особенно понравились практические задания
+                                    и обратная связь от преподавателя. После курса смог выполнить реальный проект для
+                                    портфолио."</p>
                                 <small class="text-muted">— Алексей Алексеев</small>
                             </div>
                         </div>
@@ -185,7 +187,9 @@
                                     </div>
                                     <span class="badge bg-info text-dark">Конструктивный отзыв</span>
                                 </div>
-                                <p class="card-text">"Хороший курс, но хотелось бы больше примеров из реальной практики. Материал объясняется доступно, задания полезные. Рекомендую начинающим дизайнерам."</p>
+                                <p class="card-text">"Хороший курс, но хотелось бы больше примеров из реальной практики.
+                                    Материал объясняется доступно, задания полезные. Рекомендую начинающим
+                                    дизайнерам."</p>
                                 <small class="text-muted">— Елена Еленова</small>
                             </div>
                         </div>
@@ -295,56 +299,47 @@
         }
     };
 
-    // Инициализация рейтинга по умолчанию
-    let currentRating = 5;
-    updateRatingDisplay(5);
+    // Обработка рейтинга
+    const ratingInputs = document.querySelectorAll('#rating-stars input');
+    const ratingText = document.getElementById('rating-text');
+    const ratingDescription = document.getElementById('rating-description');
 
-    // Обработка выбора звезд рейтинга
-    document.querySelectorAll('#rating-stars input[type="radio"]').forEach(star => {
-        star.addEventListener('change', function() {
-            currentRating = parseInt(this.value);
-            updateRatingDisplay(currentRating);
-            syncRatingStars(currentRating);
-        });
-    });
-
-    // Синхронизация звезд рейтинга
-    function syncRatingStars(rating) {
-        document.querySelectorAll('#rating-stars input[type="radio"]').forEach(star => {
-            star.checked = star.value <= rating;
-        });
-    }
-
-    // Обновление отображения рейтинга
-    function updateRatingDisplay(rating) {
-        const ratingText = document.getElementById('rating-text');
-        const ratingDesc = document.getElementById('rating-description');
-
-        ratingText.textContent = `${rating} звезд - ${ratingDescriptions[rating].text}`;
-        ratingDesc.textContent = ratingDescriptions[rating].description;
-    }
-
-    // Подсчет символов в комментарии
-    const commentTextarea = document.getElementById('review-comment');
-    const charCount = document.getElementById('char-count');
-
-    commentTextarea.addEventListener('input', function() {
-        const length = this.value.length;
-        charCount.textContent = `${length}/1000 символов`;
-        if (length > 1000) {
-            charCount.classList.remove('text-muted');
-            charCount.classList.add('text-danger');
-            this.classList.add('is-invalid');
-        } else {
-            charCount.classList.remove('text-danger');
-            charCount.classList.add('text-muted');
-            this.classList.remove('is-invalid');
+    // Функция обновления текста рейтинга
+    function updateRatingText(value) {
+        const desc = ratingDescriptions[value];
+        if (desc) {
+            ratingText.textContent = `${value} звезд${value === 1 ? 'а' : (value >= 2 && value <= 4 ? 'ы' : '')} - ${desc.text}`;
+            ratingDescription.textContent = desc.description;
         }
+    }
+
+    // Обработчики для радиокнопок
+    ratingInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            updateRatingText(this.value);
+        });
+
+        input.addEventListener('mouseenter', function() {
+            const value = this.value;
+            const desc = ratingDescriptions[value];
+            if (desc) {
+                ratingText.textContent = `Поставить ${value} звезд${value === 1 ? 'у' : (value >= 2 && value <= 4 ? 'ы' : '')} - ${desc.text}`;
+                ratingDescription.textContent = desc.description;
+            }
+        });
     });
 
-    // Инициализация при загрузке
+    // Инициализация начального состояния
     document.addEventListener('DOMContentLoaded', function() {
-        syncRatingStars(5);
+
+        const commentTextarea = document.getElementById('review-comment');
+        const charCount = document.getElementById('char-count');
+
+        commentTextarea.addEventListener('input', function() {
+            const length = this.value.length;
+            charCount.textContent = `${length}/1000 символов`;
+        });
+
         const initialLength = commentTextarea.value.length;
         charCount.textContent = `${initialLength}/1000 символов`;
     });
